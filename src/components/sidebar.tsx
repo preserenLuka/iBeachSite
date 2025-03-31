@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../css/Sidebar.css";
 import { LuSword } from "react-icons/lu";
 import { FaShieldAlt } from "react-icons/fa";
@@ -8,7 +8,7 @@ interface SidebarProps {
   setOpenContent: (content: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ OpenContent, setOpenContent }) => {
+const Sidebar: React.FC<SidebarProps> = ({ setOpenContent }) => {
   const handleContentChange = (content: string) => {
     setOpenContent(content); // Update the content being shown in the main area
   };
