@@ -1,6 +1,5 @@
-/* App.css */
 .app-container {
-    display: flex;
-    height: 100vh;
-  }
-  
+  display: flex;
+  height: 100vh;
+  align-items: stretch; /* Ensures both children stretch to full height */
+}

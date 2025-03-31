@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Sidebar.css";
 import { LuSword } from "react-icons/lu";
 import { FaShieldAlt } from "react-icons/fa";
@@ -12,7 +12,6 @@ const Sidebar: React.FC<SidebarProps> = ({ OpenContent, setOpenContent }) => {
   const handleContentChange = (content: string) => {
     setOpenContent(content); // Update the content being shown in the main area
   };
-
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
 
@@ -40,7 +39,11 @@ const Sidebar: React.FC<SidebarProps> = ({ OpenContent, setOpenContent }) => {
       {/* Search Input */}
       {isOpen && (
         <div className="search-container">
-          <input type="text" placeholder="Search..." className="search-input" />
+          <input
+            type="text"
+            placeholder="Search... ( DISABLED )"
+            className="search-input"
+          />
         </div>
       )}
 
@@ -64,27 +67,64 @@ const Sidebar: React.FC<SidebarProps> = ({ OpenContent, setOpenContent }) => {
               }`}
             >
               <div
-                className="fundamentals-item"
+                className="fundamentals-item color-red"
                 onClick={() => handleContentChange("defense")}
               >
                 <FaShieldAlt size={30} />
-                <span>Defence</span>
+                <span>Defense</span>
               </div>
               <div
-                className="fundamentals-item"
+                className="fundamentals-item color-blue"
+                onClick={() => handleContentChange("counterAttack")}
+              >
+                <span>Counter Attacking</span>
+              </div>
+              <div
+                className="fundamentals-item color-yellow"
                 onClick={() => handleContentChange("attack")}
               >
                 <LuSword size={30} />
                 <span>Attack</span>
               </div>
               <div
-                className="fundamentals-item"
-                onClick={() => handleContentChange("counterAttack")}
+                className="fundamentals-item color-green"
+                onClick={() => handleContentChange("rotations")}
               >
-                <span>Counter Attack</span>
+                <span>Rotations & Recoveries</span>
+              </div>
+              <div
+                className="fundamentals-item color-orange"
+                onClick={() => handleContentChange("speedDecision")}
+              >
+                <span>Speed & Decision Making</span>
+              </div>
+              <div
+                className="fundamentals-item color-purple"
+                onClick={() => handleContentChange("efficientChallenges")}
+              >
+                <span>Efficient Challenges</span>
+              </div>
+              <div
+                className="fundamentals-item color-pink"
+                onClick={() => handleContentChange("soloQ")}
+              >
+                <span>Carry in Solo Q</span>
+              </div>
+              <div
+                className="fundamentals-item color-cyan"
+                onClick={() => handleContentChange("mental")}
+              >
+                <span>Positive Mental</span>
+              </div>
+              <div
+                className="fundamentals-item color-teal"
+                onClick={() => handleContentChange("advancedTips")}
+              >
+                <span>21 Advanced Tips</span>
               </div>
             </div>
           </li>
+
           <li className="menu-item">
             <div
               className="menu-title"
@@ -101,27 +141,56 @@ const Sidebar: React.FC<SidebarProps> = ({ OpenContent, setOpenContent }) => {
               }`}
             >
               <div
-                className="fundamentals-item"
-                onClick={() => handleContentChange("shoots")}
+                className="fundamentals-item color-red"
+                onClick={() => handleContentChange("shooting")}
               >
-                <FaShieldAlt size={30} />
-                <span>shoots</span>
+                <span>Shooting Mechanics</span>
               </div>
               <div
-                className="fundamentals-item"
-                onClick={() => handleContentChange("arial")}
+                className="fundamentals-item color-blue"
+                onClick={() => handleContentChange("dribbling")}
               >
-                <LuSword size={30} />
-                <span>arial</span>
+                <span>Dribbling Mechanics</span>
               </div>
               <div
-                className="fundamentals-item"
-                onClick={() => handleContentChange("flick")}
+                className="fundamentals-item color-yellow"
+                onClick={() => handleContentChange("flicks")}
               >
-                <span>flick</span>
+                <span>Flick Mechanics</span>
+              </div>
+              <div
+                className="fundamentals-item color-green"
+                onClick={() => handleContentChange("cutting")}
+              >
+                <span>Cutting & Control Mechanics</span>
+              </div>
+              <div
+                className="fundamentals-item color-orange"
+                onClick={() => handleContentChange("aerial")}
+              >
+                <span>Aerial Mechanics</span>
+              </div>
+              <div
+                className="fundamentals-item color-purple"
+                onClick={() => handleContentChange("resets")}
+              >
+                <span>Reset Mechanics</span>
+              </div>
+              <div
+                className="fundamentals-item color-pink"
+                onClick={() => handleContentChange("wall")}
+              >
+                <span>Wall & Ceiling Mechanics</span>
+              </div>
+              <div
+                className="fundamentals-item color-cyan"
+                onClick={() => handleContentChange("defense")}
+              >
+                <span>Defensive Mechanics</span>
               </div>
             </div>
           </li>
+
           <li className="menu-item">
             <div
               className="menu-title"
@@ -216,12 +285,12 @@ const Sidebar: React.FC<SidebarProps> = ({ OpenContent, setOpenContent }) => {
         <div className="profile-section">
           <img
             src="https://via.placeholder.com/40"
-            alt="Profile"
+            alt="Pfp"
             className="profile-pic"
           />
           <div className="profile-info">
-            <p className="profile-name">Prem Shahi</p>
-            <p className="profile-title">Web Designer</p>
+            <p className="profile-name">ProfileName</p>
+            <p className="profile-title"></p>
           </div>
         </div>
       )}
