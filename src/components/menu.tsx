@@ -72,14 +72,6 @@ const Sidebar: React.FC<SidebarProps> = ({
               </button>
             </div>
 
-            {/* Search Input */}
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search... ( DISABLED )"
-                className="search-input"
-              />
-            </div>
             {/* Navigation Links */}
             <nav className="nav-links">
               <ul>
@@ -319,21 +311,6 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </li>
               </ul>
             </nav>
-
-            {/* Profile Section */}
-            {isOpen && (
-              <div className="profile-section">
-                <img
-                  src="https://via.placeholder.com/40"
-                  alt="Pfp"
-                  className="profile-pic"
-                />
-                <div className="profile-info">
-                  <p className="profile-name">ProfileName</p>
-                  <p className="profile-title"></p>
-                </div>
-              </div>
-            )}
           </div>
         ) : (
           <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
@@ -368,17 +345,6 @@ const Sidebar: React.FC<SidebarProps> = ({
               <div className="icon-placeholder">≡</div>
             </button>
           </div>
-
-          {/* Search Input */}
-          {isOpen && (
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search... (DISABLED)"
-                className="search-input"
-              />
-            </div>
-          )}
 
           {/* Navigation Links */}
           <nav className="nav-links">
@@ -619,21 +585,6 @@ const Sidebar: React.FC<SidebarProps> = ({
               </li>
             </ul>
           </nav>
-
-          {/* Profile Section */}
-          {isOpen && (
-            <div className="profile-section">
-              <img
-                src="https://via.placeholder.com/40"
-                alt="Pfp"
-                className="profile-pic"
-              />
-              <div className="profile-info">
-                <p className="profile-name">ProfileName</p>
-                <p className="profile-title"></p>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </>

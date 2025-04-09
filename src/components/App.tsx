@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "./sidebar";
+import Menu from "./menu";
 import Content from "./content";
 import "../css/app.css";
 
@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      <Sidebar
+      <Menu
         OpenContent={OpenContent}
         isContentOpen={isContentOpen}
         setOpenContent={setOpenContent}
