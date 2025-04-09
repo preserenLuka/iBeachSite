@@ -1,5 +1,12 @@
+/* app.css */
 .app-container {
   display: flex;
   height: 100vh;
-  align-items: stretch; /* Ensures both children stretch to full height */
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    display: block;
+  }
 }

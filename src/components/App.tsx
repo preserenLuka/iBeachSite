@@ -5,11 +5,17 @@ import "../css/app.css";
 
 const App: React.FC = () => {
   const [OpenContent, setOpenContent] = useState<string>(""); // Content to be opened
+  const [isContentOpen, setisContentOpen] = useState<boolean>(true);
 
   return (
     <div className="app-container">
-      <Sidebar OpenContent={OpenContent} setOpenContent={setOpenContent} />
-      <Content OpenContent={OpenContent} />
+      <Sidebar
+        OpenContent={OpenContent}
+        isContentOpen={isContentOpen}
+        setOpenContent={setOpenContent}
+        setisContentOpen={setisContentOpen}
+      />
+      <Content OpenContent={OpenContent} isContentOpen={isContentOpen} />
     </div>
   );
 };

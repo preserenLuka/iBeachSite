@@ -4,7 +4,6 @@
 .sidebar {
   background-color: #0d0d0d;
   color: #266ebb;
-  /*color: #d8d5ec;*/
   height: 100%;
   transition: width 0.35s ease;
   display: flex;
@@ -40,6 +39,15 @@
   color: #fff;
   padding: 0;
   margin-left: 1rem;
+}
+.toggle-btn2 {
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0;
+  margin: auto;
 }
 
 /* Placeholder icon style */
@@ -147,6 +155,75 @@
 .profile-info {
   display: flex;
   flex-direction: column;
+}
+
+/* phone version ----------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: height 0.8s ease;
+  }
+
+  .sidebar.closed {
+    width: 100%;
+    height: 6%;
+    transition: height 0.8s ease;
+  }
+
+  .sidebar-header.closed {
+    display: block;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .toggle-btn2 h3 {
+    text-transform: capitalize;
+  }
+
+  /* skupni začetni stil */
+  /* privzeto: ko sidebar zaprt */
+  .sidebar.closed .search-container,
+  .sidebar.closed .nav-links,
+  .sidebar.closed .profile-section {
+    opacity: 0;
+    transition: opacity 3s ease;
+  }
+
+  /* ko je sidebar odprt */
+  .sidebar.open .search-container,
+  .sidebar.open .nav-links,
+  .sidebar.open .profile-section {
+    opacity: 1;
+  }
+}
+
+.opacity0 {
+  opacity: 0;
+}
+.opacity1 {
+  opacity: 1;
+}
+
+.mobile-content {
+  padding: 10px;
+}
+
+.mobile-submenu-content,
+.mobile-welcome-message {
+  text-align: center;
+}
+
+.mobile-submenu-content h3,
+.mobile-welcome-message h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.mobile-welcome-message p {
+  font-size: 1em;
+  color: #777;
 }
 
 /* BARVE ----------------------------------------------------------------------------- */
